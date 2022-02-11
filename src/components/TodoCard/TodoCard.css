@@ -1,0 +1,34 @@
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin : .5em 0;
+    padding: 1.1em 2.2em;
+    font-size: 1.8rem;
+    background-color: #fff;
+    border-radius: 1.5em;
+    outline: 1px solid black;
+}
+.checkbox{
+    width: 26px;
+    height: 26px;
+}
+.strike{
+    text-decoration: line-through;
+    color: grey;
+}
+.delete{
+    font-size: 1.3rem;
+    padding: .5em 1em;
+   border: 2px solid #e74c3c;
+   background-color: #fff;
+    color: #e74c3c;
+    border-radius: 0.5rem;
+}
+.delete:hover{
+    background-color: #e74c3c;
+    color: #fff;
+}
+span{
+    font-size:2.2rem;
+}
