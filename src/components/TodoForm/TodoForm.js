@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './TodoForm.css';
 
-function TodoForm({addTodos}) {
+function TodoForm({addTodo,currentView}) {
 
   const [value, setValue] = useState('');
   
@@ -9,7 +9,7 @@ function TodoForm({addTodos}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value) return;
-    addTodos(value);
+    addTodo(value,currentView);
     setValue('');
   }
   return (
