@@ -32,12 +32,12 @@ function App() {
 
   }
 
-  const deleteTodo=(id)=>{
+  const deleteTodo=(id,section)=>{
 
     setTodo(
       {
         ...Todo,
-        default: Todo.default.filter(todo=>todo.id!==id)
+        [section]: Todo[section].filter(todo=>todo.id!==id)
       }
       )
 
