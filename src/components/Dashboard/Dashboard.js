@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaPlusCircle } from "react-icons/fa";
 import './Dashboard.css';
 
-function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSection}) {
+function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSection,currentView}) {
 
   const [addSectionMode, setAddSectionMode] = useState(false);
   
@@ -17,9 +17,9 @@ function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSecti
         <ul>
         {
             sectionTypes.map(section=>(
-                <li onClick={()=>changeCurentViewHandler(section)} key={section}>
+                <li className={section===currentView?'active':''} onClick={()=>changeCurentViewHandler(section)} key={section}>
                   <span>{section}</span>
-                </li>  
+                </li> 
             ))
         }
         <li>

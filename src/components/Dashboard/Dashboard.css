@@ -46,3 +46,10 @@ li{
     bottom: 0;
     background-image: linear-gradient(to right, #5e42a6, #b74e91)
 } */
+
+.active{
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+}

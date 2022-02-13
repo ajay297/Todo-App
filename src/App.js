@@ -52,23 +52,13 @@ function App() {
       [value]:[]
     })
     setValue('');
-    console.log('hello');
   }
-
-  console.log(Todo);
-
-  
-
- 
-
-  
-  
 
   return (
 
     <TodoContext.Provider value={{Todo,addTodo,deleteTodo}}>
         <div className='container'>
-          <Dashboard sectionTypes={sectionTypes} changeCurentViewHandler={(section)=>setCurrentView(section)} addSection={addSection} value={value} setValue={setValue}/>
+          <Dashboard sectionTypes={sectionTypes} changeCurentViewHandler={(section)=>setCurrentView(section)} addSection={addSection} value={value} setValue={setValue} currentView={currentView}/>
           <div className='content'>
             <h1>Todo App</h1>
             <h2>Hey I am in {currentView}</h2>
