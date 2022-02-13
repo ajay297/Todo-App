@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaPlusCircle } from "react-icons/fa";
 import './Dashboard.css';
 
 function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSection}) {
+
+  const [addSectionMode, setAddSectionMode] = useState(false);
+  
+  const addSectionHandler = (e) => {
+    addSection(e);
+    setAddSectionMode(false);
+  }
 
   return (
       <div className="dashboard-container">
@@ -9,16 +17,22 @@ function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSecti
         <ul>
         {
             sectionTypes.map(section=>(
-                <li onClick={()=>changeCurentViewHandler(section)}>
+                <li onClick={()=>changeCurentViewHandler(section)} key={section}>
                   <span>{section}</span>
                 </li>  
             ))
         }
-        </ul>
-        <form>
-        <input className='section-input' type="text" placeholder="Add Section" value={value}  onChange={e => setValue(e.target.value)}/>
-        <button type="submit" onClick={addSection}>Submit</button>
+        <li>
+           <form>
+        <input className='section-input' style={{
+            display: addSectionMode ? 'inline-block' : 'none'
+        }} type="text" placeholder="Add Section" value={value}  onChange={e => setValue(e.target.value)}/>
+        <button className='section-button' type="submit" onClick={(e)=>addSectionHandler(e)}>Submit</button>
         </form>
+        </li>
+        <li><FaPlusCircle className='add-icon' onClick={()=>setAddSectionMode(true)}/></li>
+        </ul>
+       
         
     </div>
       </div>
