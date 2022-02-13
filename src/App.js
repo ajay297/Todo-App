@@ -1,5 +1,6 @@
 import React,{createContext, useState} from 'react';
 import "./App.css";
+import Dashboard from './components/Dashboard/Dashboard';
 import TodoList from './components/TodoList/TodoList';
 
 export const TodoContext=createContext();
@@ -22,7 +23,7 @@ function App() {
 
   const addTodo=(value,section)=>{
 
-    const item={id: Math.round(Math.random()*1000),value: value};
+    const item={id: Math.round(Math.random()*1000),value: value,dateAndTime: new Date()};
 
     const oldTodo=Todo[section]?Todo[section]:[];
     setTodo({
@@ -67,23 +68,8 @@ function App() {
 
     <TodoContext.Provider value={{Todo,addTodo,deleteTodo}}>
         <div className='container'>
-
-        <div className='dashboard'>
-            <ul>
-              {
-                sectionTypes.map(section=>(
-                  <li key={section} onClick={()=>setCurrentView(section)}>{section}</li>
-                ))
-              }
-            </ul>
-            <form>
-              <input type="text" placeholder="Add Section" value={value}  onChange={e => setValue(e.target.value)}/>
-              <button type="submit" onClick={addSection}>Submit</button>
-            </form>
-            
-          </div>
-
-          <div>
+          <Dashboard sectionTypes={sectionTypes} changeCurentViewHandler={(section)=>setCurrentView(section)} addSection={addSection} value={value} setValue={setValue}/>
+          <div className='content'>
             <h1>Todo App</h1>
             <h2>Hey I am in {currentView}</h2>
           <TodoList currentView={currentView}/>
