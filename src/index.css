@@ -1,5 +1,10 @@
 body{
-  background-color: #E6F3F1;
+  /* background-color: #E6F3F1; */
+  background-image: url("./image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   font-family: 'Lato', sans-serif;
   margin: 0;
 }

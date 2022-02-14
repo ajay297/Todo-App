@@ -1,7 +1,8 @@
 .dashboard-container {
-    background-color:  #312450;;  /* fallback for old browsers */
+    background-color: #0000006b;  /* fallback for old browsers */
     color: white;
     width: 25%;
+    min-width: 400px;
 }
 .content{
     /* width: 50%; */
@@ -11,12 +12,12 @@
 
 ul{
     padding: 0;
+    padding-left: 40px;
     list-style-type: none;
 }
 li{
     cursor: pointer;
     padding: 1em 2em;
-    text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: 0.4em;
     text-align: center;

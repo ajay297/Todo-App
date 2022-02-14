@@ -43,6 +43,22 @@ function App() {
       )
 
   }
+
+  const editTodo=(id,value,section)=>{
+  
+      setTodo(
+        {
+          ...Todo,
+          [section]: Todo[section].map(todo=>{
+            if(todo.id===id){
+              return {...todo, value:value,dateAndTime: new Date()};
+            }
+            return todo;
+          })
+        }
+        )
+  
+  }
   
   const addSection=(e)=>{
     e.preventDefault();
@@ -56,12 +72,11 @@ function App() {
 
   return (
 
-    <TodoContext.Provider value={{Todo,addTodo,deleteTodo}}>
+    <TodoContext.Provider value={{Todo,addTodo,deleteTodo,editTodo,currentView}}>
         <div className='container'>
           <Dashboard sectionTypes={sectionTypes} changeCurentViewHandler={(section)=>setCurrentView(section)} addSection={addSection} value={value} setValue={setValue} currentView={currentView}/>
           <div className='content'>
             <h1>Todo App</h1>
-            <h2>Hey I am in {currentView}</h2>
           <TodoList currentView={currentView}/>
           </div>
           

@@ -1,9 +1,11 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
+import { TodoContext } from '../../App';
 import './TodoForm.css';
 
-function TodoForm({addTodo,currentView}) {
+function TodoForm() {
 
   const [value, setValue] = useState('');
+  const {currentView,addTodo} = useContext(TodoContext);
   
 
   const handleSubmit = (e) => {

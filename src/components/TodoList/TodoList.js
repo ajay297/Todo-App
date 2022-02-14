@@ -6,9 +6,11 @@ import './TodoList.css';
 
 
 
-function TodoList({currentView}) {
+function TodoList() {
 
-    const {Todo,addTodo,deleteTodo}=useContext(TodoContext);
+    const {Todo}=useContext(TodoContext);
+
+    const {currentView} = useContext(TodoContext);
 
     const TodoList=Todo[currentView];
 
@@ -27,11 +29,11 @@ function TodoList({currentView}) {
 
   return (
     <div>
-        <TodoForm addTodo={addTodo} currentView={currentView}/>
+        <TodoForm/>
         <div className='card-container'>
         {
             TodoList.map(ele=>(
-                <TodoCard todo={ele.value} key={ele.id} id={ele.id} deleteTodo={deleteTodo} currentView={currentView} dateAndTime={ele.dateAndTime}/>
+                <TodoCard todo={ele.value} key={ele.id} id={ele.id} currentView={currentView} dateAndTime={ele.dateAndTime}/>
             ))
         }
         </div>
