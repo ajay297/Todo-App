@@ -1,17 +1,22 @@
-import React,{useContext, useState} from 'react'
-import { TodoContext } from '../../App';
+import React,{useState} from 'react'
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../redux/action';
+// import { TodoContext } from '../../App';
 import './TodoForm.css';
 
-function TodoForm() {
+function TodoForm({currentView}) {
 
   const [value, setValue] = useState('');
-  const {currentView,addTodo} = useContext(TodoContext);
+  const dispatch=useDispatch();
+  // const {currentView,addTodo} = useContext(TodoContext);
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value) return;
-    addTodo(value,currentView);
+    // addTodo(value,currentView);
+    console.log(currentView);
+    dispatch(addTodo(value,currentView));
     setValue('');
   }
   return (

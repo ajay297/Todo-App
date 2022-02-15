@@ -1,18 +1,19 @@
 import React, { useState,useContext } from 'react'
-import { TodoContext } from '../../App';
+import { useSelector } from 'react-redux';
 import TodoCard from '../TodoCard/TodoCard';
 import TodoForm from '../TodoForm/TodoForm';
 import './TodoList.css';
 
 
 
-function TodoList() {
+function TodoList({currentView}) {
 
-    const {Todo}=useContext(TodoContext);
+    // const {Todo}=useContext(TodoContext);
+    const todos=useSelector(state=>state.todos);
 
-    const {currentView} = useContext(TodoContext);
+    // const {currentView} = useContext(TodoContext);
 
-    const todoList=Todo[currentView];
+    const todoList=todos[currentView];
 
     // console.log(Todo);
     // console.log(addTodo);
@@ -29,11 +30,11 @@ function TodoList() {
 
   return (
     <div>
-        <TodoForm/>
+        <TodoForm currentView={currentView}/>
         <div className='card-container'>
         {
             todoList?.map(ele=>(
-                <TodoCard todo={ele.value} key={ele.id} id={ele.id} dateAndTime={ele.dateAndTime}/>
+                <TodoCard key={ele.id} todo={ele.value} id={ele.id} dateAndTime={ele.dateAndTime} currentView={currentView}/>
             ))
         }
         </div>

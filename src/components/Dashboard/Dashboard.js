@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
 import { FaPlusCircle } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { addSection } from '../../redux/action';
 import './Dashboard.css';
 
-function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSection,currentView}) {
+function Dashboard({sectionTypes,changeCurentViewHandler,currentView}) {
 
   const [addSectionMode, setAddSectionMode] = useState(false);
+  const [value, setValue] = useState('');
+
+  const dispatch=useDispatch();
   
   const addSectionHandler = (e) => {
-    addSection(e);
+    e.preventDefault();
+    if (!value) return;
+    // setTodo({
+    //   ...Todo,
+    //   [value]:[]
+    // })
+    dispatch(addSection(value));
+    setValue('');
     setAddSectionMode(false);
     changeCurentViewHandler(value);
   }
