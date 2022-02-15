@@ -12,7 +12,7 @@ function TodoList() {
 
     const {currentView} = useContext(TodoContext);
 
-    const TodoList=Todo[currentView];
+    const todoList=Todo[currentView];
 
     // console.log(Todo);
     // console.log(addTodo);
@@ -32,8 +32,8 @@ function TodoList() {
         <TodoForm/>
         <div className='card-container'>
         {
-            TodoList.map(ele=>(
-                <TodoCard todo={ele.value} key={ele.id} id={ele.id} currentView={currentView} dateAndTime={ele.dateAndTime}/>
+            todoList?.map(ele=>(
+                <TodoCard todo={ele.value} key={ele.id} id={ele.id} dateAndTime={ele.dateAndTime}/>
             ))
         }
         </div>

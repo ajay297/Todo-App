@@ -7,7 +7,7 @@ export const TodoContext=createContext();
 
 function App() {
   const [Todo, setTodo] = useState({
-    default:[],
+    // default:[],
   });
 
   const [value, setValue] = useState('');
@@ -19,7 +19,7 @@ function App() {
   }
 
 
-  const [currentView, setCurrentView] = useState(sectionTypes[0]);
+  const [currentView, setCurrentView] = useState();
 
   const addTodo=(value,section)=>{
 
@@ -77,7 +77,9 @@ function App() {
           <Dashboard sectionTypes={sectionTypes} changeCurentViewHandler={(section)=>setCurrentView(section)} addSection={addSection} value={value} setValue={setValue} currentView={currentView}/>
           <div className='content'>
             <h1>Todo App</h1>
-          <TodoList currentView={currentView}/>
+            {
+              currentView&&<TodoList/>
+            }
           </div>
           
         

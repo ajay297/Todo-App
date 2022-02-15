@@ -37,6 +37,9 @@ li{
     color: white;
     border-bottom: 2px solid white;
 }
+.section-input::placeholder{
+    color: white;
+}
 /* span::after{
     content: '';
     position: absolute;

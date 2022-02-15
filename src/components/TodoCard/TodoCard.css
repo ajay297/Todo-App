@@ -53,3 +53,13 @@ span{
 .pen{
     margin-right: 0.6em;
 }
+
+.todo-edit{
+    font-size: 1rem;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    color: black;
+    border-bottom: 2px solid black;
+}
+

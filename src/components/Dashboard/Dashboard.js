@@ -9,6 +9,7 @@ function Dashboard({sectionTypes,changeCurentViewHandler,setValue,value,addSecti
   const addSectionHandler = (e) => {
     addSection(e);
     setAddSectionMode(false);
+    changeCurentViewHandler(value);
   }
 
   return (
