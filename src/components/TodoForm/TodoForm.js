@@ -7,18 +7,16 @@ import './TodoForm.css';
 function TodoForm({currentView}) {
 
   const [value, setValue] = useState('');
-  const dispatch=useDispatch();
-  // const {currentView,addTodo} = useContext(TodoContext);
-  
 
+  const dispatch=useDispatch();
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value) return;
-    // addTodo(value,currentView);
-    console.log(currentView);
     dispatch(addTodo(value,currentView));
     setValue('');
   }
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <input type="text" 

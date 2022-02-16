@@ -1,11 +1,10 @@
 .dashboard-container {
-    background-color: #0000006b;  /* fallback for old browsers */
+    background-color: #0000006b;  
     color: white;
     width: 25%;
     min-width: 400px;
 }
 .content{
-    /* width: 50%; */
     flex: 0.8;
     margin: 0 auto;
 }
@@ -40,16 +39,6 @@ li{
 .section-input::placeholder{
     color: white;
 }
-/* span::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0.2em;
-    background: black;
-    left: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, #5e42a6, #b74e91)
-} */
 
 .active{
     background-color: white;

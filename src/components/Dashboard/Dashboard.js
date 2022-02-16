@@ -14,10 +14,6 @@ function Dashboard({sectionTypes,changeCurentViewHandler,currentView}) {
   const addSectionHandler = (e) => {
     e.preventDefault();
     if (!value) return;
-    // setTodo({
-    //   ...Todo,
-    //   [value]:[]
-    // })
     dispatch(addSection(value));
     setValue('');
     setAddSectionMode(false);

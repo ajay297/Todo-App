@@ -11,8 +11,7 @@ function TodoCard({todo,id,dateAndTime,currentView}) {
   
   const [editMode, setEditMode] = useState(false);
   const completed= isChecked ? 'strike' : '';
-  // const {editTodo,deleteTodo,currentView} = useContext(TodoContext);
-
+  
   const dispatch=useDispatch();
   
   
