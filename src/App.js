@@ -85,7 +85,7 @@ function App() {
           <div className='content'>
             <h1>Todo App</h1>
             {
-              currentView&&<TodoList currentView={currentView}/>
+              currentView&&<TodoList key={1223} currentView={currentView}/>
             }
           </div>
           

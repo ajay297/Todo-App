@@ -34,7 +34,9 @@ function TodoList({currentView}) {
         <div className='card-container'>
         {
             todoList?.map(ele=>(
-                <TodoCard key={ele.id} todo={ele.value} id={ele.id} dateAndTime={ele.dateAndTime} currentView={currentView}/>
+                 <TodoCard key={ele.id} todo={ele.value} id={ele.id} dateAndTime={ele.dateAndTime} currentView={currentView}/>
+  
+               
             ))
         }
         </div>

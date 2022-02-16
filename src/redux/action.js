@@ -13,6 +13,7 @@ export const addTodo = (item,section) => {
 }
 
 export const editTodo = (id,value,section) => {
+    console.log(id);
     return {
         type: EDIT_TODO,
         id: id,

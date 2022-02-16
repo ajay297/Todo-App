@@ -29,7 +29,7 @@ function TodoCard({todo,id,dateAndTime,currentView}) {
             value={text} 
             onChange={(e)=>setText(e.target.value)} 
             /> : 
-            <span>{todo}</span>
+            <span>{text}</span>
           }
           </div>
         <div className='icon-container'>
