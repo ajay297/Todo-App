@@ -28,6 +28,8 @@ function TodoList({currentView}) {
     //     setTodos(todos.filter(todo=>todo.id!==id))
     // }
 
+    console.log("re-rendering");
+
   return (
     <div>
         <TodoForm currentView={currentView}/>

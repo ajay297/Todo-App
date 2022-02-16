@@ -28,7 +28,7 @@ const rootReducer = (state = initialState, action) => {
                     ...state.todos,
                     [action.section]: state.todos[action.section].map(todo=>{
                         if(todo.id===action.id){
-                            return {...state.todos, value:action.value,dateAndTime: new Date()};
+                            return {...todo, value:action.value,dateAndTime: new Date()};
                         }
                         return todo;
                     })
